@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-book Details</title>
+
+<style>
+body {
+    background-color: #BFEFFF;
+    font-family: Candara, sans-serif;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.menu table {
+    margin: auto;
+}
+
+.menu a {
+    font-family: Verdana, sans-serif;
+    background-color: #795548;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: #000000;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 220px;
+    height: auto;
+}
+
+h1, h2 {
+    font-family: Verdana, sans-serif;
+    background-color: #795548;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-table {
+    width: 100%;
+    background-color: #BFEFFF;
+}
+
+.book-title {
+    font-family: Fantasy;
+    font-size: 35px;
+    text-align: center;
+}
+
+.book-info {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+.price {
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hover-img {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    transition: 0.3s;
+    margin: auto;
+}
+
+.hover-img:hover {
+    transform: scale(1.1);
+}
+
+#cart-box {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    border: 3px solid #795548;
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 10px gray;
+    z-index: 999;
+    color: black;
+}
+
+.cart-link {
+    background: none;
+    padding: 0;
+    text-decoration: none;
+}
+
+.add-cart-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #795548;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    margin: auto;
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.social-icons {
+    position: absolute;
+    right: 30px;
+}
+
+.social-icons a {
+    background: none;
+    padding: 0;
+}
+
+.social-icons img {
+    width: 40px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu table,
+    .menu tr,
+    .menu td {
+        display: block;
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        margin: 5px;
+    }
+
+    #cart-box {
+        position: static;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 25px;
+        width: fit-content;
+    }
+
+    .book-title {
+        font-size: 28px;
+    }
+
+    .book-info {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+    <img src="Knowledgeebookshop.jpg" alt="Knowledge Ebook Shop Logo">
+</div>
+
+<div class="menu">
+<table>
+<tr>
+    <td><a href="index.html">Home</a></td>
+    <td><a href="Shop.html">Shop</a></td>
+    <td><a href="E-bookdetails.html">E-book Details</a></td>
+    <td><a href="AboutUs.html">About Us</a></td>
+    <td><a href="ContactUs.html">Contact Us</a></td>
+</tr>
+</table>
+</div>
+
+<a href="Cart.html" class="cart-link">
+<div id="cart-box">
+🛒 Cart:
+<span id="cart-count">0</span>
+</div>
+</a>
+
+<h1>All Available E-books</h1>
+
+<table class="product-table">
+
+<tr id="EngineeringBook1">
+<td class="book-info">
+<img src="Engineeringwords.jpg" class="hover-img" alt="Engineering Words">
+<br><br>
+<div class="book-title">Engineering Words</div>
+<br>
+<strong>Author:</strong> Sharon Burton, Bonni Graham Gonzalez<br>
+<strong>Subject:</strong> Engineering<br>
+<strong>Summary:</strong> Over the course of a career, every engineer needs to communicate clearly in written and oral form. This book introduces communication skills for engineers, including clear writing, résumés, cover letters, requirements documents, and presentations.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐☆ 4.5/5<br>
+<strong>Customer Reviews:</strong> Easy to understand and useful for beginners.
+<br><br>
+<span class="price">$9.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Engineering Words', 9.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="EngineeringBook2">
+<td class="book-info">
+<img src="IntroductiontoEngineeringLibrary.jpg" class="hover-img" alt="Introduction to Engineering Library">
+<br><br>
+<div class="book-title">Introduction to Engineering Library</div>
+<br>
+<strong>Author:</strong> Paul H. Wright<br>
+<strong>Subject:</strong> Engineering<br>
+<strong>Summary:</strong> A broad and concise introduction to engineering for undergraduate students. It covers engineering history, career paths, professional responsibility, ethics, problem solving, and communication.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐☆☆ 3.5/5<br>
+<strong>Customer Reviews:</strong> Beginners seem to understand and love it.
+<br><br>
+<span class="price">$12.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Introduction to Engineering Library', 12.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="EngineeringBook3">
+<td class="book-info">
+<img src="PracticalReliabilityEngineering.jpg" class="hover-img" alt="Practical Reliability Engineering">
+<br><br>
+<div class="book-title">Practical Reliability Engineering</div>
+<br>
+<strong>Author:</strong> Patrick D. T. O'Connor, Andre V. Kleyner<br>
+<strong>Subject:</strong> Engineering<br>
+<strong>Summary:</strong> A practical reference for reliability professionals, covering reliability theory, real-world applications, repairable systems, human reliability, and modern reliability engineering topics.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐⭐ 5/5<br>
+<strong>Customer Reviews:</strong> Readers love it and recommend it.
+<br><br>
+<span class="price">$14.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Practical Reliability Engineering', 14.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="ITBook1">
+<td class="book-info">
+<img src="Informationtechnologyprojectmanagement.jpg" class="hover-img" alt="Information Technology Project Management">
+<br><br>
+<div class="book-title">Information Technology Project Management</div>
+<br>
+<strong>Author:</strong> Jack T. Marchewka<br>
+<strong>Subject:</strong> Information Technology<br>
+<strong>Summary:</strong> This book focuses on creating measurable organizational value through IT projects and provides tools and techniques for IT project management.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐☆☆ 3/5<br>
+<strong>Customer Reviews:</strong> Beginners seem to understand and love it.
+<br><br>
+<span class="price">$9.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Information technology project management', 9.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="ITBook2">
+<td class="book-info">
+<img src="InformationTechnology.jpg" class="hover-img" alt="Information Technology">
+<br><br>
+<div class="book-title">Information Technology</div>
+<br>
+<strong>Author:</strong> Richard Fox<br>
+<strong>Subject:</strong> Information Technology<br>
+<strong>Summary:</strong> A revised introduction to information technology concepts that students may encounter throughout their IT studies and careers.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐☆ 4/5<br>
+<strong>Customer Reviews:</strong> Easy to understand and useful for beginners.
+<br><br>
+<span class="price">$12.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Information Technology', 12.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="ITBook3">
+<td class="book-info">
+<img src="StrategicInformationTechnology.jpg" class="hover-img" alt="Strategic Information Technology">
+<br><br>
+<div class="book-title">Strategic Information Technology</div>
+<br>
+<strong>Author:</strong> Arthur M. Langer, Lyle Yorks<br>
+<strong>Subject:</strong> Information Technology<br>
+<strong>Summary:</strong> A guide for CIOs and IT leaders to participate in senior management strategy and position technology as a business driver.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐⭐ 5/5<br>
+<strong>Customer Reviews:</strong> Readers love it and recommend it.
+<br><br>
+<span class="price">$14.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Strategic Information Technology', 14.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="BusinessBook1">
+<td class="book-info">
+<img src="Industrialorganizationtheoryandpractise.jpg" class="hover-img" alt="Industrial Organization Theory and Practice">
+<br><br>
+<div class="book-title">Industrial Organization Theory and Practice</div>
+<br>
+<strong>Author:</strong> Arthur M. Langer, Lyle Yorks<br>
+<strong>Subject:</strong> Business<br>
+<strong>Summary:</strong> This book blends industrial organization theory with empirical data, real-world applications, case studies, problems, and key concept definitions.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐☆☆ 3/5<br>
+<strong>Customer Reviews:</strong> Beginners seem to understand and love it.
+<br><br>
+<span class="price">$9.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Industrial organization theory and practise', 9.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="BusinessBook2">
+<td class="book-info">
+<img src="BusinessStudiesForDummies.jpg" class="hover-img" alt="Business Studies For Dummies">
+<br><br>
+<div class="book-title">Business Studies For Dummies</div>
+<br>
+<strong>Author:</strong> Richard Pettinger<br>
+<strong>Subject:</strong> Business<br>
+<strong>Summary:</strong> A beginner-friendly overview of business studies topics including start-up, accounting, finance, operations, human resources, management, analytics, and economics.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐☆ 4/5<br>
+<strong>Customer Reviews:</strong> Easy to understand and useful for beginners.
+<br><br>
+<span class="price">$12.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Business Studies For Dummies', 12.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="BusinessBook3">
+<td class="book-info">
+<img src="TheCostofDoingBusinessStudy2025Edition.jpg" class="hover-img" alt="The Cost of Doing Business Study 2025 Edition">
+<br><br>
+<div class="book-title">The Cost of Doing Business Study, 2025 Edition</div>
+<br>
+<strong>Author:</strong> NAHB Business Management &amp; Information Technology Team<br>
+<strong>Subject:</strong> Business<br>
+<strong>Summary:</strong> A business benchmarking resource that discusses financial performance, gross margins, net profit, cost of sales, operating expenses, and financial ratios.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐⭐ 5/5<br>
+<strong>Customer Reviews:</strong> Readers love it and recommend it.
+<br><br>
+<span class="price">$14.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('The Cost of Doing Business Study, 2025 Edition', 14.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="book1">
+<td class="book-info">
+<img src="ProgramminginC++.jpg" class="hover-img" alt="Programming in C++">
+<br><br>
+<div class="book-title">Programming in C++</div>
+<br>
+<strong>Author:</strong> Laxmisha Rai<br>
+<strong>Subject:</strong> Programming<br>
+<strong>Summary:</strong> An overview of C++ programming and object-oriented concepts including classes, objects, inheritance, constructors, polymorphism, arrays, strings, sorting, and searching algorithms.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐☆☆ 3/5<br>
+<strong>Customer Reviews:</strong> Beginners seem to understand and love it.
+<br><br>
+<span class="price">$9.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Programming in C++', 9.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="book2">
+<td class="book-info">
+<img src="BeginningProgrammingwithJavaForDummies.jpg" class="hover-img" alt="Beginning Programming with Java For Dummies">
+<br><br>
+<div class="book-title">Beginning Programming with Java For Dummies</div>
+<br>
+<strong>Author:</strong> Barry Burd<br>
+<strong>Subject:</strong> Programming<br>
+<strong>Summary:</strong> A beginner-friendly guide to learning Java programming for application development, including Android, desktop, and server-side applications.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐☆☆ 3/5<br>
+<strong>Customer Reviews:</strong> Beginners seem to understand and love it.
+<br><br>
+<span class="price">$12.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Beginning Programming with Java For Dummies', 12.90)" value="Add to Cart">
+</td>
+</tr>
+
+<tr id="book3">
+<td class="book-info">
+<img src="SoftwareTesting.jpg" class="hover-img" alt="Software Testing">
+<br><br>
+<div class="book-title">Software Testing</div>
+<br>
+<strong>Author:</strong> Geoff Thompson, Peter Morgan, Angelina Samaroo, John Kurowski, Peter Williams, Marie Salmon, Paul Weymouth<br>
+<strong>Subject:</strong> Programming<br>
+<strong>Summary:</strong> A study guide explaining software testing basics, effective testing methods, dynamic and static testing, and exam preparation for the ISTQB Certified Tester Foundation Level exam.
+<br><br>
+<strong>Format:</strong> PDF / EPUB<br>
+<strong>Rating:</strong> ⭐⭐⭐⭐⭐ 5/5<br>
+<strong>Customer Reviews:</strong> Readers love it and recommend it.
+<br><br>
+<span class="price">$14.90</span>
+<br><br>
+<input class="add-cart-btn" type="button" onclick="addToCart('Software Testing', 14.90)" value="Add to Cart">
+</td>
+</tr>
+
+</table>
+
+<footer>
+<div class="footer-box">
+
+<div class="footer-text">
+© Copyrights 2026 | All Rights Reserved
+</div>
+
+<div class="social-icons">
+<a href="https://www.facebook.com" target="_blank">
+<img src="facebooklogo.png" alt="Facebook">
+</a>
+
+<a href="https://www.instagram.com" target="_blank">
+<img src="instagramlogo.png" alt="Instagram">
+</a>
+</div>
+
+</div>
+</footer>
+
+<script>
+let cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+document.getElementById("cart-count").innerHTML = cart.length;
+
+function addToCart(title, price) {
+    cart.push({
+        title: title,
+        price: price
+    });
+
+    sessionStorage.setItem("cartItems", JSON.stringify(cart));
+    document.getElementById("cart-count").innerHTML = cart.length;
+    alert(title + " added to cart");
+}
+</script>
+
+</body>
+</html>

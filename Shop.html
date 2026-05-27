@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop</title>
+
+<style>
+body {
+    background-color: #BFEFFF;
+    font-family: Candara, sans-serif;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.menu table {
+    margin: auto;
+}
+
+.menu a {
+    font-family: Verdana, sans-serif;
+    background-color: #795548;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: #000000;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 220px;
+    height: auto;
+}
+
+.main-logo {
+    text-align: center;
+}
+
+.main-logo img {
+    width: 80%;
+    height: auto;
+    border: 5px solid black;
+}
+
+h1 {
+    font-family: Verdana, sans-serif;
+    font-size: 40px;
+    color: white;
+    background-color: #795548;
+    text-align: center;
+    padding: 15px;
+}
+
+h2 {
+    font-family: Verdana, sans-serif;
+    font-size: 30px;
+    background-color: #795548;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-table {
+    width: 100%;
+    background-color: #FFF8E1;
+    margin-bottom: 40px;
+}
+
+.product-title {
+    font-family: Fantasy;
+    font-size: 35px;
+}
+
+.product-desc {
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.hover-img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    transition: 0.3s;
+}
+
+.hover-img:hover {
+    transform: scale(1.1);
+}
+
+.old-price {
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.new-price {
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#cart-box {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    border: 3px solid #795548;
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 10px gray;
+    z-index: 999;
+    color: black;
+}
+
+.cart-link {
+    background: none;
+    padding: 0;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #795548;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    margin: auto;
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.social-icons {
+    position: absolute;
+    right: 30px;
+}
+
+.social-icons a {
+    background: none;
+    padding: 0;
+}
+
+.social-icons img {
+    width: 40px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu table,
+    .menu tr,
+    .menu td {
+        display: block;
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        margin: 5px;
+    }
+
+    #cart-box {
+        position: static;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 25px;
+        width: fit-content;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+    <img src="Knowledgeebookshop.jpg" alt="Knowledge Ebook Shop Logo">
+</div>
+
+<div class="menu">
+<table>
+<tr>
+    <td><a href="index.html">Home</a></td>
+    <td><a href="Shop.html">Shop</a></td>
+    <td><a href="E-bookdetails.html">E-book Details</a></td>
+    <td><a href="AboutUs.html">About Us</a></td>
+    <td><a href="ContactUs.html">Contact Us</a></td>
+</tr>
+</table>
+</div>
+
+<a href="Cart.html" class="cart-link">
+<div id="cart-box">
+🛒 Cart:
+<span id="cart-count">0</span>
+</div>
+</a>
+
+<h1>KNOWLEDGE EBOOK SHOP</h1>
+
+<div class="main-logo">
+    <img src="Knowledgeebookshop.jpg" alt="Knowledge Ebook Shop Banner">
+</div>
+
+<h2>Engineering Product Listings</h2>
+
+<table class="product-table" id="engineering-table">
+<tr>
+<td colspan="3" style="text-align:center;">
+<label>Sort By:</label>
+<select onchange="pointToEngineeringBook(this.value)">
+    <option value="">Select</option>
+    <option value="lowest">Lowest Price</option>
+    <option value="highest">Highest Price</option>
+</select>
+</td>
+</tr>
+
+<tr style="background-color:#D7CCC8;">
+    <th>Book Image</th>
+    <th>Book Title</th>
+    <th>Price</th>
+</tr>
+
+<tr id="EngineeringBook1">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#EngineeringBook1">
+<img src="Engineeringwords.jpg" class="hover-img" alt="Engineering Words">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Engineering Words</div>
+<br>
+<div class="product-desc">Communicating clearly in the workplace.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$15</span><br>
+<span class="new-price">$9.90</span>
+</td>
+</tr>
+
+<tr id="EngineeringBook2">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#EngineeringBook2">
+<img src="IntroductiontoEngineeringLibrary.jpg" class="hover-img" alt="Introduction to Engineering Library">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Introduction to Engineering Library</div>
+<br>
+<div class="product-desc">Designed for beginner engineering students.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$20</span><br>
+<span class="new-price">$12.90</span>
+</td>
+</tr>
+
+<tr id="EngineeringBook3">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#EngineeringBook3">
+<img src="PracticalReliabilityEngineering.jpg" class="hover-img" alt="Practical Reliability Engineering">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Practical Reliability Engineering</div>
+<br>
+<div class="product-desc">A key reference for reliability professionals worldwide.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$25</span><br>
+<span class="new-price">$14.90</span>
+</td>
+</tr>
+</table>
+
+<h2>IT Product Listings</h2>
+
+<table class="product-table" id="it-table">
+<tr>
+<td colspan="3" style="text-align:center;">
+<label>Sort By:</label>
+<select onchange="pointToITBook(this.value)">
+    <option value="">Select</option>
+    <option value="lowest">Lowest Price</option>
+    <option value="highest">Highest Price</option>
+</select>
+</td>
+</tr>
+
+<tr style="background-color:#D7CCC8;">
+    <th>Book Image</th>
+    <th>Book Title</th>
+    <th>Price</th>
+</tr>
+
+<tr id="ITBook1">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#ITBook1">
+<img src="Informationtechnologyprojectmanagement.jpg" class="hover-img" alt="Information Technology Project Management">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Information Technology Project Management</div>
+<br>
+<div class="product-desc">Providing measurable organizational value.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$15</span><br>
+<span class="new-price">$9.90</span>
+</td>
+</tr>
+
+<tr id="ITBook2">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#ITBook2">
+<img src="InformationTechnology.jpg" class="hover-img" alt="Information Technology">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Information Technology</div>
+<br>
+<div class="product-desc">An introduction for today's digital world.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$20</span><br>
+<span class="new-price">$12.90</span>
+</td>
+</tr>
+
+<tr id="ITBook3">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#ITBook3">
+<img src="StrategicInformationTechnology.jpg" class="hover-img" alt="Strategic Information Technology">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Strategic Information Technology</div>
+<br>
+<div class="product-desc">Successfully navigate the changing face of the CIO role.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$25</span><br>
+<span class="new-price">$14.90</span>
+</td>
+</tr>
+</table>
+
+<h2>Business Product Listings</h2>
+
+<table class="product-table" id="business-table">
+<tr>
+<td colspan="3" style="text-align:center;">
+<label>Sort By:</label>
+<select onchange="pointToBusinessBook(this.value)">
+    <option value="">Select</option>
+    <option value="lowest">Lowest Price</option>
+    <option value="highest">Highest Price</option>
+</select>
+</td>
+</tr>
+
+<tr style="background-color:#D7CCC8;">
+    <th>Book Image</th>
+    <th>Book Title</th>
+    <th>Price</th>
+</tr>
+
+<tr id="BusinessBook1">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#BusinessBook1">
+<img src="Industrialorganizationtheoryandpractise.jpg" class="hover-img" alt="Industrial Organization">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Industrial Organization</div>
+<br>
+<div class="product-desc">Theory and Practice.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$15</span><br>
+<span class="new-price">$9.90</span>
+</td>
+</tr>
+
+<tr id="BusinessBook2">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#BusinessBook2">
+<img src="BusinessStudiesForDummies.jpg" class="hover-img" alt="Business Studies For Dummies">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Business Studies For Dummies</div>
+<br>
+<div class="product-desc">Your hands-on introduction to modern business education.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$20</span><br>
+<span class="new-price">$12.90</span>
+</td>
+</tr>
+
+<tr id="BusinessBook3">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#BusinessBook3">
+<img src="TheCostofDoingBusinessStudy2025Edition.jpg" class="hover-img" alt="The Cost of Doing Business Study 2025 Edition">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">The Cost of Doing Business Study, 2025 Edition</div>
+<br>
+<div class="product-desc">Benchmark your business and move forward with confidence.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$25</span><br>
+<span class="new-price">$14.90</span>
+</td>
+</tr>
+</table>
+
+<h2>Programming Product Listings</h2>
+
+<table class="product-table" id="programming-table">
+<tr>
+<td colspan="3" style="text-align:center;">
+<label>Sort By:</label>
+<select onchange="pointToBook(this.value)">
+    <option value="">Select</option>
+    <option value="lowest">Lowest Price</option>
+    <option value="highest">Highest Price</option>
+</select>
+</td>
+</tr>
+
+<tr style="background-color:#D7CCC8;">
+    <th>Book Image</th>
+    <th>Book Title</th>
+    <th>Price</th>
+</tr>
+
+<tr id="book1">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#book1">
+<img src="ProgramminginC++.jpg" class="hover-img" alt="Programming in C++">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Programming in C++</div>
+<br>
+<div class="product-desc">Object Oriented Features.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$15</span><br>
+<span class="new-price">$9.90</span>
+</td>
+</tr>
+
+<tr id="book2">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#book2">
+<img src="BeginningProgrammingwithJavaForDummies.jpg" class="hover-img" alt="Beginning Programming with Java For Dummies">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Beginning Programming with Java For Dummies</div>
+<br>
+<div class="product-desc">Become a Java wizard with this popular programming guide.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$20</span><br>
+<span class="new-price">$12.90</span>
+</td>
+</tr>
+
+<tr id="book3">
+<td style="text-align:center;">
+<a href="E-bookdetails.html#book3">
+<img src="SoftwareTesting.jpg" class="hover-img" alt="Software Testing">
+</a>
+</td>
+<td style="text-align:center;">
+<div class="product-title">Software Testing</div>
+<br>
+<div class="product-desc">An ISTQB-BCS Certified Tester Foundation Level guide.</div>
+</td>
+<td style="text-align:center;">
+<span class="old-price">$25</span><br>
+<span class="new-price">$14.90</span>
+</td>
+</tr>
+</table>
+
+<footer>
+<div class="footer-box">
+
+<div class="footer-text">
+© Copyrights 2026 | All Rights Reserved
+</div>
+
+<div class="social-icons">
+<a href="https://www.facebook.com" target="_blank">
+<img src="facebooklogo.png" alt="Facebook">
+</a>
+
+<a href="https://www.instagram.com" target="_blank">
+<img src="instagramlogo.png" alt="Instagram">
+</a>
+</div>
+
+</div>
+</footer>
+
+<script>
+function pointToEngineeringBook(choice) {
+    pointToBookByList(choice, [
+        { id: "EngineeringBook1", price: 9.90 },
+        { id: "EngineeringBook2", price: 12.90 },
+        { id: "EngineeringBook3", price: 14.90 }
+    ]);
+}
+
+function pointToITBook(choice) {
+    pointToBookByList(choice, [
+        { id: "ITBook1", price: 9.90 },
+        { id: "ITBook2", price: 12.90 },
+        { id: "ITBook3", price: 14.90 }
+    ]);
+}
+
+function pointToBusinessBook(choice) {
+    pointToBookByList(choice, [
+        { id: "BusinessBook1", price: 9.90 },
+        { id: "BusinessBook2", price: 12.90 },
+        { id: "BusinessBook3", price: 14.90 }
+    ]);
+}
+
+function pointToBook(choice) {
+    pointToBookByList(choice, [
+        { id: "book1", price: 9.90 },
+        { id: "book2", price: 12.90 },
+        { id: "book3", price: 14.90 }
+    ]);
+}
+
+function pointToBookByList(choice, books) {
+    if (choice === "") {
+        return;
+    }
+
+    books.forEach(function(book) {
+        document.getElementById(book.id).style.backgroundColor = "";
+    });
+
+    let selectedBook;
+
+    if (choice === "lowest") {
+        selectedBook = books.reduce(function(a, b) {
+            return a.price < b.price ? a : b;
+        });
+    }
+
+    if (choice === "highest") {
+        selectedBook = books.reduce(function(a, b) {
+            return a.price > b.price ? a : b;
+        });
+    }
+
+    document.getElementById(selectedBook.id).style.backgroundColor = "yellow";
+    document.getElementById(selectedBook.id).scrollIntoView();
+}
+
+let cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+document.getElementById("cart-count").innerHTML = cart.length;
+</script>
+
+</body>
+</html>

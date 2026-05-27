@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+body {
+    background-color: #BFEFFF;
+    font-family: Candara, sans-serif;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu table {
+    margin: auto;
+}
+
+.menu a {
+    font-family: Verdana, sans-serif;
+    background-color: #795548;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background-color: #000000;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 220px;
+    height: auto;
+}
+
+#cart-box {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    border: 3px solid #795548;
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 10px gray;
+    z-index: 999;
+    color: black;
+}
+
+.cart-link {
+    background: none;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.banner-title {
+    background-color: #795548;
+    color: white;
+    font-family: Constantia, serif;
+    text-align: center;
+    padding: 15px;
+    overflow: hidden;
+    font-size: 60px;
+}
+
+.moving-text {
+    white-space: nowrap;
+    display: inline-block;
+    animation: moveText 10s linear infinite;
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.section-title {
+    background-color: #795548;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+.contact-form {
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    width: 300px;
+    max-width: 90%;
+}
+
+.contact-form input[type="submit"] {
+    width: auto;
+    background-color: #795548;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #000000;
+}
+
+.support-text,
+.faq-text {
+    text-align: center;
+    font-size: 22px;
+}
+
+.support-text a {
+    background: none;
+    color: blue;
+    padding: 0;
+}
+
+footer {
+    background-color: #795548;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    margin: auto;
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.social-icons {
+    position: absolute;
+    right: 30px;
+}
+
+.social-icons a {
+    background: none;
+    padding: 0;
+}
+
+.social-icons img {
+    width: 40px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu table,
+    .menu tr,
+    .menu td {
+        display: block;
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        margin: 5px;
+    }
+
+    #cart-box {
+        position: static;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 25px;
+        width: fit-content;
+    }
+
+    .banner-title {
+        font-size: 35px;
+    }
+
+    .support-text,
+    .faq-text {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+<img src="Knowledgeebookshop.jpg" alt="Knowledge Ebook Shop Logo">
+</div>
+
+<div class="menu">
+<table>
+<tr>
+<td><a href="index.html">Home</a></td>
+<td><a href="Shop.html">Shop</a></td>
+<td><a href="E-bookdetails.html">E-book Details</a></td>
+<td><a href="AboutUs.html">About Us</a></td>
+<td><a href="ContactUs.html">Contact Us</a></td>
+</tr>
+</table>
+</div>
+
+<a href="Cart.html" class="cart-link">
+<div id="cart-box">
+🛒 Cart:
+<span id="cart-count">0</span>
+</div>
+</a>
+
+<h1 class="banner-title">
+<span class="moving-text">
+Contact Us and FAQS
+</span>
+</h1>
+
+<h2 class="section-title">Contact Us</h2>
+
+<form name="Formwithval" onsubmit="return validateForm()" class="contact-form">
+
+<label for="name">Name:</label><br>
+<input type="text" id="name" name="name"><br><br>
+
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email"><br><br>
+
+<label for="message">Inquiry:</label><br>
+<textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+<h2 class="section-title">Customer Support</h2>
+
+<p class="support-text">
+<strong>Email:</strong>
+<a href="mailto:tthambiayya@lsbf.edu.sg">tthambiayya@lsbf.edu.sg</a>
+<br>
+<strong>Phone:</strong> 98762345
+<br>
+<strong>Live Chat:</strong> Available Monday to Friday, 9am - 6pm
+</p>
+
+<h2 class="section-title">FAQ</h2>
+
+<p class="faq-text">
+<strong>Q: How do I download my e-book?</strong><br>
+A: It will automatically download once you add the ebook to your cart and after payment at the checkout page.
+<br><br>
+
+<strong>Q: What payment methods are accepted?</strong><br>
+A: We accept credit card, debit card, and PayNow.
+<br><br>
+
+<strong>Q: Can I get a refund?</strong><br>
+A: Refunds are available within 7 days of purchase, but you must not have read past a small fraction of the book (often limited to 3-7%).
+</p>
+
+<footer>
+<div class="footer-box">
+
+<div class="footer-text">
+© Copyrights 2026 | All Rights Reserved
+</div>
+
+<div class="social-icons">
+
+<a href="https://www.facebook.com" target="_blank">
+<img src="facebooklogo.png" alt="Facebook">
+</a>
+
+<a href="https://www.instagram.com" target="_blank">
+<img src="instagramlogo.png" alt="Instagram">
+</a>
+
+</div>
+</footer>
+
+<script>
+let cart = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+document.getElementById("cart-count").innerHTML = cart.length;
+
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    alert("Thank you for your inquiry. We will contact you soon.");
+    return false;
+}
+</script>
+
+</body>
+</html>
