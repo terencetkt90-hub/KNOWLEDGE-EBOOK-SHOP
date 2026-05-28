@@ -246,7 +246,13 @@ Contact Us and FAQS
 <form name="Formwithval" onsubmit="return validateForm()" class="contact-form">
 
 <label for="name">Name:</label><br>
-<input type="text" id="name" name="name"><br><br>
+<input
+type="text"
+id="name"
+name="name"
+pattern="[A-Za-z ]+"
+title="Name cannot contain numbers"
+required><br><br>
 
 <label for="email">Email:</label><br>
 <input type="email" id="email" name="email"><br><br>
@@ -312,6 +318,14 @@ function validateForm() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let message = document.getElementById("message").value;
+let namePattern = /^[A-Za-z ]+$/;
+
+if (!namePattern.test(name)) {
+
+    alert("Name cannot contain numbers.");
+
+    return false;
+}
 
     if (name === "" || email === "" || message === "") {
         alert("Please fill in all fields.");
